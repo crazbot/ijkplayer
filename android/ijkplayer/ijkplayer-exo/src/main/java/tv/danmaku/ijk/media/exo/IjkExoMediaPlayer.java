@@ -22,19 +22,19 @@ import android.net.Uri;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 
-import com.google.android.exoplayer.ExoPlayer;
-import com.google.android.exoplayer.util.Util;
+import com.google.android.exoplayer2.util.Util;
+import com.google.android.exoplayer2.ExoPlayer;
 
 import java.io.FileDescriptor;
 import java.util.Map;
 
 import tv.danmaku.ijk.media.exo.demo.EventLogger;
+import tv.danmaku.ijk.media.exo.demo.SmoothStreamingTestMediaDrmCallback;
 import tv.danmaku.ijk.media.exo.demo.player.DemoPlayer;
 import tv.danmaku.ijk.media.exo.demo.player.DemoPlayer.RendererBuilder;
 import tv.danmaku.ijk.media.exo.demo.player.ExtractorRendererBuilder;
 import tv.danmaku.ijk.media.exo.demo.player.HlsRendererBuilder;
 import tv.danmaku.ijk.media.exo.demo.player.SmoothStreamingRendererBuilder;
-import tv.danmaku.ijk.media.exo.demo.SmoothStreamingTestMediaDrmCallback;
 import tv.danmaku.ijk.media.player.AbstractMediaPlayer;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.MediaInfo;
@@ -178,7 +178,6 @@ public class IjkExoMediaPlayer extends AbstractMediaPlayer {
             case ExoPlayer.STATE_READY:
                 return mInternalPlayer.getPlayWhenReady();
             case ExoPlayer.STATE_IDLE:
-            case ExoPlayer.STATE_PREPARING:
             case ExoPlayer.STATE_ENDED:
             default:
                 return false;
